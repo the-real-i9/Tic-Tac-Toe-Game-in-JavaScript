@@ -1,0 +1,33 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: cursive;
+}
+
+button {
+    cursor: pointer;
+}
+
+@mixin flex($jc:null,$ai:null,$dir:null) {
+    display: flex;
+    justify-content: $jc;
+    align-items: $ai;
+    flex-direction: $dir;
+}
+
+html, body {
+    width: 100vw;
+    height: 100vh;
+}
+
+.container {
+    --winner: green;
+    --draw: gold;
+    --lose: red;
+    width: 600px;
+    height: 100%;
+    margin: 0 auto;
+    border: 1px solid #000;
+    @include flex(center, center)
+}
