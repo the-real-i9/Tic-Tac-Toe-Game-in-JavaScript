@@ -22,7 +22,6 @@ html, body {
   width: 600px;
   height: 100%;
   margin: 0 auto;
-  border: 1px solid #000;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
