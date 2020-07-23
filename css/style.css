@@ -3,7 +3,7 @@
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  font-family: cursive;
+  font-family: 'Arial Rounded MT';
 }
 
 button {
@@ -13,12 +13,11 @@ button {
 html, body {
   width: 100vw;
   height: 100vh;
+  overflow: hidden;
+  background: #222;
 }
 
 .container {
-  --winner: green;
-  --draw: gold;
-  --lose: red;
   width: 600px;
   height: 100%;
   margin: 0 auto;
@@ -33,30 +32,7 @@ html, body {
           align-items: center;
 }
 
-.menu {
-  width: 350px;
-  height: 350px;
-  background: #EE2079;
-  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-          box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  border-radius: 10px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
-.menu .title {
-  width: 100%;
-  height: 150px;
-  text-align: center;
-  font-size: 40px;
+.frontpage {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -66,84 +42,59 @@ html, body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-weight: bold;
-  border-bottom: 2px solid #000;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 90%;
 }
 
-.menu .title span {
-  text-shadow: 0 0 5px #000;
+.frontpage .game-title {
+  font-size: 50px;
+  color: #F9F9F9;
+  text-shadow: 0px 0px 5px #000;
 }
 
-.menu .title span:nth-child(1) {
-  color: #fff;
+.frontpage .game-title span {
+  color: #EBC187;
 }
 
-.menu .title span:nth-child(2) {
-  color: #fff;
-}
-
-.menu .title span:nth-child(3) {
-  color: #fff;
-}
-
-.menu .title span:hover {
-  color: #FAC5DC;
-}
-
-.menu .co, .menu .cp {
-  font-size: 25px;
-  margin-bottom: 5px;
-}
-
-.menu .opponent, .menu .players {
-  width: 100%;
+.frontpage .players {
+  margin-top: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
-}
-
-.menu .opponent button, .menu .players button {
-  width: 40%;
-  background: #fff;
-  border: 1px solid #000;
-  border-radius: 4px;
-  outline: none;
-  font-weight: bold;
-  padding: 3px 0;
-}
-
-.menu .opponent button:hover, .menu .players button:hover {
-  background: #F9B6D3;
-}
-
-.menu .actions {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 50px;
-  width: 70%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 310px;
+  height: 175px;
+  border: 3px solid #EBC187;
+  border-radius: 15px;
 }
 
-.menu .actions button {
-  width: 45%;
-  border: 1px solid #000;
-  background: #F14D94;
-  border-radius: 3px;
+.frontpage .players button {
+  -webkit-box-shadow: inset -4px -4px 5px rgba(0, 0, 0, 0.3), inset 4px 4px 5px rgba(255, 255, 255, 0.4);
+          box-shadow: inset -4px -4px 5px rgba(0, 0, 0, 0.3), inset 4px 4px 5px rgba(255, 255, 255, 0.4);
+  width: 90%;
+  height: 60px;
+  font-size: 25px;
+  color: #222;
+  background: #EBC187;
   outline: none;
-  padding: 2px 0;
-  font-weight: bold;
+  border: none;
+  border-radius: 7px;
 }
 
-.menu .actions button:active {
-  outline: auto;
+.frontpage .players button:active {
+  -webkit-box-shadow: inset 4px 4px 5px rgba(0, 0, 0, 0.3), inset -4px -4px 5px rgba(255, 255, 255, 0.4);
+          box-shadow: inset 4px 4px 5px rgba(0, 0, 0, 0.3), inset -4px -4px 5px rgba(255, 255, 255, 0.4);
 }
 /*# sourceMappingURL=style.css.map */

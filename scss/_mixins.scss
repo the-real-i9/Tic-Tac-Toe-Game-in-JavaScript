@@ -1,0 +1,20 @@
+$light: #F9F9F9;
+$dark: #222;
+$cream: #EBC187;
+
+@mixin flex($jc:null,$ai:null,$dir:null) {
+    display: flex;
+    justify-content: $jc;
+    align-items: $ai;
+    flex-direction: $dir;
+}
+
+@mixin btn-shadow {
+    box-shadow: inset -4px -4px 5px rgba(#000, 0.3),
+                        inset 4px 4px 5px rgba(#fff, 0.4);
+    
+    &:active {
+        box-shadow: inset 4px 4px 5px rgba(#000, 0.3),
+                        inset -4px -4px 5px rgba(#fff, 0.4);
+    }
+}

@@ -1,110 +1,64 @@
+@import 'mixins';
+@import 'gameset';
+
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: cursive;
+    font-family: 'Arial Rounded MT';
 }
 
 button {
     cursor: pointer;
 }
 
-@mixin flex($jc:null,$ai:null,$dir:null) {
-    display: flex;
-    justify-content: $jc;
-    align-items: $ai;
-    flex-direction: $dir;
-}
-
 html, body {
     width: 100vw;
     height: 100vh;
+    overflow: hidden;
+    background: $dark;
 }
 
+
 .container {
-    --winner: green;
-    --draw: gold;
-    --lose: red;
     width: 600px;
     height: 100%;
     margin: 0 auto;
     @include flex(center, center);
 }
 
-.menu {
-    width: 350px;
-    height: 350px;
-    background: #EE2079;
-    box-shadow: 0 0 10px rgba(#000, 0.2);
-    border-radius: 10px;
-    @include flex(null, center, column);
-    .title {
-        width: 100%;
-        height: 150px;
-        text-align: center;
-        font-size: 40px;
-        @include flex(center, center);
-        font-weight: bold;
-        border-bottom: 2px solid #000;
-        
+.frontpage {
+    @include flex(center, center, column);
+    height:90%;
+    .game-title {
+        font-size: 50px;
+        color: $light;
+        text-shadow: 0px 0px 5px #000;
         span {
-            text-shadow: 0 0 5px #000;
-            &:nth-child(1) {
-                color: #fff;
-            }
-            &:nth-child(2) {
-                color: #fff;
-            }
-            &:nth-child(3) {
-                color: #fff;
-            }
-
-            &:hover {
-                color: #FAC5DC;
-            }
+            color: $cream;
         }
     }
-
-    .co, .cp {
-        font-size: 25px;
-        margin-bottom: 5px;
-    }
-
-    .opponent, .players {
-        width: 100%;
-        @include flex(space-evenly);
-        button {
-            width: 40%;
-            background: #fff;
-            border: 1px solid #000;
-            border-radius: 4px;
-            outline: none;
-            font-weight: bold;
-            padding: 3px 0;
-
-            &:hover {
-                background: #F9B6D3;
-            }
-        }
-    }
-
-    .actions {
-        @include flex(space-between, center);
-        height: 50px;
-        width: 70%;
+    
+    .players {
+        margin-top: 20px;
+        @include flex(space-evenly, center, column);
+        width: 310px;
+        height: 175px;
+        border: 3px solid $cream;
+        border-radius: 15px;
 
         button {
-            width: 45%;
-            border: 1px solid #000;
-            background: #F14D94;
-            border-radius: 3px;
+            @include btn-shadow;
+            width: 90%;
+            height: 60px;
+            font-size: 25px;
+            color: $dark;
+            background: $cream;
             outline: none;
-            padding: 2px 0;
-            font-weight: bold;
-
-            &:active {
-                outline: auto;
-            }
+            border: none;
+            border-radius: 7px;
         }
     }
+
 }
