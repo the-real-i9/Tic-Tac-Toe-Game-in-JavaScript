@@ -3,6 +3,7 @@
   border-radius: 5px;
   width: 90%;
   margin-top: 20px;
+  display: none;
 }
 
 .game-set .set-cont {
@@ -160,6 +161,102 @@
 }
 
 .game-set .set-cont .start-button:active {
+  -webkit-box-shadow: inset 4px 4px 5px rgba(0, 0, 0, 0.3), inset -4px -4px 5px rgba(255, 255, 255, 0.4);
+          box-shadow: inset 4px 4px 5px rgba(0, 0, 0, 0.3), inset -4px -4px 5px rgba(255, 255, 255, 0.4);
+}
+
+.game-play {
+  border: 5px ridge #9E8970;
+  padding: 10px;
+  border-radius: 10px;
+  background: #212524;
+}
+
+.game-play table {
+  border-collapse: collapse;
+  width: 275px;
+  height: 275px;
+}
+
+.game-play table tr {
+  height: 91.66667px;
+}
+
+.game-play table tr:first-child td {
+  border-top: none;
+}
+
+.game-play table tr:last-child td {
+  border-bottom: none;
+}
+
+.game-play table tr td {
+  width: 91.66667px;
+  border: 3px solid #EBC187;
+  text-align: center;
+  color: #EBC187;
+  font-size: 60px;
+  cursor: pointer;
+}
+
+.game-play table tr td:first-child {
+  border-left: none;
+}
+
+.game-play table tr td:last-child {
+  border-right: none;
+}
+
+.players-and-score {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 45px;
+  border: 5px ridge #9E8970;
+  margin-top: 10px;
+  background: #212524;
+  color: #EBC187;
+  border-radius: 7px;
+  font-size: 17px;
+  padding: 0 10px;
+}
+
+.players-and-score .player-symbol-g {
+  font-size: 30px;
+}
+
+.home-restart {
+  width: 100%;
+  margin-top: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.home-restart button {
+  background: #EBC187;
+  outline: none;
+  color: #000;
+  border: none;
+  width: 50px;
+  height: 50px;
+  -webkit-box-shadow: inset -4px -4px 5px rgba(0, 0, 0, 0.3), inset 4px 4px 5px rgba(255, 255, 255, 0.4);
+          box-shadow: inset -4px -4px 5px rgba(0, 0, 0, 0.3), inset 4px 4px 5px rgba(255, 255, 255, 0.4);
+  border-radius: 3px;
+  font-size: 23px;
+}
+
+.home-restart button:active {
   -webkit-box-shadow: inset 4px 4px 5px rgba(0, 0, 0, 0.3), inset -4px -4px 5px rgba(255, 255, 255, 0.4);
           box-shadow: inset 4px 4px 5px rgba(0, 0, 0, 0.3), inset -4px -4px 5px rgba(255, 255, 255, 0.4);
 }

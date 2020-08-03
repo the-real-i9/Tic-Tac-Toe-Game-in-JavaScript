@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/fontawesome_all.min.css">
     <title>Tic-Tac-Toe Game</title>
     <link rel="stylesheet" href="./css/style.css">
 </head>
@@ -36,7 +37,7 @@
                     </div>
                     <div class="players-sign">
                         <p class="sign" id='player-sign'>X</p>
-                        <p class='exchange-sign'>&#x21bb</p>
+                        <p class='exchange-sign'><i class='fas fa-undo'></i></p>
                         <p class="sign" id='opponent-sign'>O</p>
                     </div>
                 </div>
@@ -47,6 +48,47 @@
                 </div>
 
                 <button class="start-button">Start</button>
+            </div>
+        </div>
+
+        <!-- Game Play -->
+        <div class="game-play-div">
+            <div class="game-play">
+                <table>
+                    <tr>
+                        <td class='cell' id='cell-0'>X</td>
+                        <td class='cell' id='cell-1'>O</td>
+                        <td class='cell' id='cell-2'>O</td>
+                    </tr>
+                    <tr>
+                        <td class='cell' id='cell-3'>X</td>
+                        <td class='cell' id='cell-4'>X</td>
+                        <td class='cell' id='cell-5'>O</td>
+                    </tr>
+                    <tr>
+                        <td class='cell' id='cell-6'></td>
+                        <td class='cell' id='cell-7'>X</td>
+                        <td class='cell' id='cell-8'>O</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="players-and-score">
+                <div class="player-dets" id="player-1-dets">
+                    <span class="player-symbol-g" id="player-1-symbol">X</span>
+                    <span class="player-name-g" id="player-1-name">Mckennney</span> :
+                    <span class="player-score-g" id="player-1-score">0</span>
+                </div>
+                <div class="player-dets" id="player-2-dets">
+                    <span class="player-symbol-g" id="player-2-symbol">O</span>
+                    <span class="player-name-g" id="player-2-name">Danny</span> :
+                    <span class="player-score-g" id="player-2-score">0</span>
+                </div>
+            </div>
+
+            <div class="home-restart">
+                <button id="home"><i class='fas fa-home'></i></button>
+                <button id="restart"><i class='fas fa-undo'></i></button>
             </div>
         </div>
     </div>
