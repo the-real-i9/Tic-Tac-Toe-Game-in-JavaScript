@@ -8,19 +8,47 @@
 </head>
 <body>
     <div class="container">
+        <div class="game-title">
+            <span>T</span>IC
+            <span>T</span>AC
+            <span>T</span>OE
+        </div>
         <div class="frontpage">
-            <div class="game-title">
-                <span>T</span>IC
-                <span>T</span>AC
-                <span>T</span>OE
-            </div>
-
             <div class="players">
                 <button id='one-player'>One Player</button>
                 <button id='two-players'>Two Players</button>
             </div>
         </div>
+        <div class="game-set">
+            <!-- Variables will change depending JS -->
+            <div class="set-cont">
+                <p id='players-count'>One Player</p>
+                <div class="player-ids-div">
+                    <div class="players-input">
+                        <div class="player-name">
+                            <p class='label'>Name</p>
+                            <input type="text" autofocus>
+                        </div>
+                        <div class="opponent-name">
+                            <p class="label">Opponent</p>
+                            <input type="text">
+                        </div>
+                    </div>
+                    <div class="players-sign">
+                        <p class="sign" id='player-sign'>X</p>
+                        <p class='exchange-sign'>&#x21bb</p>
+                        <p class="sign" id='opponent-sign'>O</p>
+                    </div>
+                </div>
+                <div class="move">
+                    <p>First Move</p>
+                    <div class="px">X</div>
+                    <div class="po">O</div>
+                </div>
 
+                <button class="start-button">Start</button>
+            </div>
+        </div>
     </div>
 </body>
 </html>

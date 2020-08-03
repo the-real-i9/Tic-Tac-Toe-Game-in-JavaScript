@@ -16,21 +16,17 @@ button {
 html, body {
     width: 100vw;
     height: 100vh;
-    overflow: hidden;
+    @include flex(center, center);
     background: $dark;
 }
 
 
 .container {
-    width: 600px;
-    height: 100%;
-    margin: 0 auto;
-    @include flex(center, center);
-}
-
-.frontpage {
+    width: 500px;
+    height: 80%;
+    // border: 1px solid #fff;
     @include flex(center, center, column);
-    height:90%;
+
     .game-title {
         font-size: 50px;
         color: $light;
@@ -39,13 +35,18 @@ html, body {
             color: $cream;
         }
     }
+}
+
+.frontpage {
+    width: 100%;
+    @include flex(center, center, column);
     
     .players {
         margin-top: 20px;
         @include flex(space-evenly, center, column);
         width: 310px;
         height: 175px;
-        border: 3px solid $cream;
+        border: 8px ridge $borderCol;
         border-radius: 15px;
 
         button {
@@ -59,6 +60,6 @@ html, body {
             border: none;
             border-radius: 7px;
         }
+        display: none;
     }
-
 }

@@ -1,6 +1,9 @@
 $light: #F9F9F9;
 $dark: #222;
 $cream: #EBC187;
+$gameset-bg: #212524;
+$input-bg: #363A39;
+$borderCol: #9E8970;
 
 @mixin flex($jc:null,$ai:null,$dir:null) {
     display: flex;
@@ -17,4 +20,8 @@ $cream: #EBC187;
         box-shadow: inset 4px 4px 5px rgba(#000, 0.3),
                         inset -4px -4px 5px rgba(#fff, 0.4);
     }
+}
+
+@mixin input-shadow {
+    box-shadow: 0 4px 0 #272B2B;
 }
