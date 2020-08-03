@@ -98,6 +98,7 @@
 }
 
 .game-set .set-cont .player-ids-div .players-sign .exchange-sign {
+  font-size: 17px;
   cursor: pointer;
 }
 
@@ -125,7 +126,6 @@
   color: #EBC187;
   width: 40px;
   height: 40px;
-  border: 2px solid #EBC187;
   font-size: 25px;
   border-radius: 50%;
   display: -webkit-box;
@@ -163,6 +163,10 @@
 .game-set .set-cont .start-button:active {
   -webkit-box-shadow: inset 4px 4px 5px rgba(0, 0, 0, 0.3), inset -4px -4px 5px rgba(255, 255, 255, 0.4);
           box-shadow: inset 4px 4px 5px rgba(0, 0, 0, 0.3), inset -4px -4px 5px rgba(255, 255, 255, 0.4);
+}
+
+.first-move {
+  border: 2px solid #EBC187;
 }
 
 .game-play {
@@ -261,6 +265,10 @@
           box-shadow: inset 4px 4px 5px rgba(0, 0, 0, 0.3), inset -4px -4px 5px rgba(255, 255, 255, 0.4);
 }
 
+.game-play-div {
+  display: none;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -352,7 +360,6 @@ html, body {
   height: 175px;
   border: 8px ridge #9E8970;
   border-radius: 15px;
-  display: none;
 }
 
 .frontpage .players button {

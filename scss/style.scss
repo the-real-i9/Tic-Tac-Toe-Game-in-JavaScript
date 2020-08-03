@@ -25,7 +25,6 @@ html, body {
 .container {
     width: 500px;
     height: 80%;
-    // border: 1px solid #fff;
     @include flex(center, center, column);
 
     .game-title {
@@ -61,6 +60,6 @@ html, body {
             border: none;
             border-radius: 7px;
         }
-        display: none;
+        // display: none;
     }
 }

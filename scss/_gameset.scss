@@ -63,6 +63,7 @@
                 margin-left: 5px;
 
                 .exchange-sign {
+                    font-size: 17px;
                     cursor: pointer;
                 }
             }
@@ -83,7 +84,6 @@
                 color: $cream;
                 width: 40px;
                 height: 40px;
-                border: 2px solid $cream;
                 font-size: 25px;
                 border-radius: 50%;
                 @include flex(center, center);
@@ -112,3 +112,6 @@
     display: none;
 }
 
+.first-move {
+    border: 2px solid $cream;
+}
