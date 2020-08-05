@@ -8,14 +8,17 @@ const {
     firstPlayerNameInput,
     firstPlayerAvatar,
     opponentAvatar,
+    playerInputs,
 } = DOMElems;
 const player1 = {};
 const opponent = {};
+// eslint-disable-next-line import/no-mutable-exports
 let currentPlayer = null;
 
 const gameStart = () => {
-    if (!firstPlayerNameInput.value) {
-        setStyle(firstPlayerNameInput, 'border', '1px solid red');
+    const someEmpty = [...playerInputs].some((v) => !v.value);
+    if (someEmpty) {
+        [...playerInputs].map((elem) => !elem.value && setStyle(elem, 'border', '1px solid red'));
         return;
     }
 

@@ -1,5 +1,8 @@
 import {
- event, setStyle, setProp, classAction,
+    event,
+    setStyle,
+    setProp,
+    classAction,
 } from './manipFuncs.js';
 import DOMElems from './DOMElems.js';
 const {
@@ -18,7 +21,7 @@ const general = () => {
 
     for (const input of [...playerInputs]) {
         event(input, 'focus', () => {
-            setStyle(input, 'border', 'none');
+            [...playerInputs].map((inputs) => setStyle(inputs, 'border', 'none'));
         });
     }
 
@@ -36,9 +39,7 @@ const general = () => {
     // change current player
     for (const elem of [...playerMove]) {
         event(elem, 'click', () => {
-            for (const elemIn of [...playerMove]) {
-                classAction(elemIn, 'remove', 'first-move');
-            }
+            [...playerMove].map((elems) => classAction(elems, 'remove', 'first-move'));
             classAction(elem, 'add', 'first-move');
         });
     }

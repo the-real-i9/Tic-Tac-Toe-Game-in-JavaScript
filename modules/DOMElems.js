@@ -1,4 +1,4 @@
-const [select, selectAll] = [(elem) => document.querySelector(elem), (elem) => document.querySelectorAll(elem)];
+import { select, selectAll } from './manipFuncs.js';
 const DOMElems = {
     onePlayerBtn: select('#one-player'),
     twoPlayersBtn: select('#two-players'),
