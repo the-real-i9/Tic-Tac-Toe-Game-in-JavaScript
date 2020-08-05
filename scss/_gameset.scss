@@ -22,7 +22,7 @@
             .players-input {
                 // border: 1px solid #fff;
                 margin-top: 10px;
-                .player-name, .opponent-name {
+                .player-1-name-set, .opponent-name-set {
                     @include flex(flex-end, center);
 
                     .label {
@@ -48,7 +48,7 @@
                         font-size: 40px;
                     }
                 }
-                .player-name {
+                .player-1-name-set {
                     margin-bottom: 20px;
                 }
 
@@ -62,7 +62,7 @@
                 color: $cream;
                 margin-left: 5px;
 
-                .exchange-sign {
+                .swap-sign {
                     font-size: 17px;
                     cursor: pointer;
                 }

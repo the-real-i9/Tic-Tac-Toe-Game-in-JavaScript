@@ -26,25 +26,25 @@
                 <p id='players-count'>One Player</p>
                 <div class="player-ids-div">
                     <div class="players-input">
-                        <div class="player-name">
+                        <div class="player-1-name-set">
                             <p class='label'>Name</p>
-                            <input type="text" autofocus>
+                            <input type="text" id="player-1-name-input" autofocus>
                         </div>
-                        <div class="opponent-name">
+                        <div class="opponent-name-set">
                             <p class="label">Opponent</p>
-                            <input type="text">
+                            <input type="text" id="opponent-name-input">
                         </div>
                     </div>
                     <div class="players-sign">
-                        <p class="sign" id='player-sign'>X</p>
-                        <p class='exchange-sign'><i class='fas fa-undo'></i></p>
-                        <p class="sign" id='opponent-sign'>O</p>
+                        <p class="sign" id='player-1-sign-set'>X</p>
+                        <p class='swap-sign'><i class='fas fa-undo'></i></p>
+                        <p class="sign" id='opponent-sign-set'>O</p>
                     </div>
                 </div>
                 <div class="move">
                     <p>First Move</p>
-                    <div class="pX first-move">X</div>
-                    <div class="pO">O</div>
+                    <div class="pM first-move" id="pXm">X</div>
+                    <div class="pM" id="pOm">O</div>
                 </div>
 
                 <button class="start-button">Start</button>
@@ -79,10 +79,10 @@
                     <span class="player-name-g" id="player-1-name">Mckennney</span> :
                     <span class="player-score-g" id="player-1-score">0</span>
                 </div>
-                <div class="player-dets" id="player-2-dets">
-                    <span class="player-symbol-g" id="player-2-symbol">O</span>
-                    <span class="player-name-g" id="player-2-name">Danny</span> :
-                    <span class="player-score-g" id="player-2-score">0</span>
+                <div class="player-dets" id="opponent-dets">
+                    <span class="player-symbol-g" id="opponent-symbol">O</span>
+                    <span class="player-name-g" id="opponent-name">Danny</span> :
+                    <span class="player-score-g" id="opponent-score">0</span>
                 </div>
             </div>
 

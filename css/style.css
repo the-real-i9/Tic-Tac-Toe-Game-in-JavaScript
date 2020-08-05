@@ -38,7 +38,7 @@
   margin-top: 10px;
 }
 
-.game-set .set-cont .player-ids-div .players-input .player-name, .game-set .set-cont .player-ids-div .players-input .opponent-name {
+.game-set .set-cont .player-ids-div .players-input .player-1-name-set, .game-set .set-cont .player-ids-div .players-input .opponent-name-set {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -50,13 +50,13 @@
           align-items: center;
 }
 
-.game-set .set-cont .player-ids-div .players-input .player-name .label, .game-set .set-cont .player-ids-div .players-input .opponent-name .label {
+.game-set .set-cont .player-ids-div .players-input .player-1-name-set .label, .game-set .set-cont .player-ids-div .players-input .opponent-name-set .label {
   margin-right: 15px;
   color: #EBC187;
   font-size: 17px;
 }
 
-.game-set .set-cont .player-ids-div .players-input .player-name input, .game-set .set-cont .player-ids-div .players-input .opponent-name input {
+.game-set .set-cont .player-ids-div .players-input .player-1-name-set input, .game-set .set-cont .player-ids-div .players-input .opponent-name-set input {
   width: 150px;
   border: none;
   outline: none;
@@ -70,11 +70,11 @@
   font-size: 17px;
 }
 
-.game-set .set-cont .player-ids-div .players-input .player-name .sign, .game-set .set-cont .player-ids-div .players-input .opponent-name .sign {
+.game-set .set-cont .player-ids-div .players-input .player-1-name-set .sign, .game-set .set-cont .player-ids-div .players-input .opponent-name-set .sign {
   font-size: 40px;
 }
 
-.game-set .set-cont .player-ids-div .players-input .player-name {
+.game-set .set-cont .player-ids-div .players-input .player-1-name-set {
   margin-bottom: 20px;
 }
 
@@ -97,7 +97,7 @@
   margin-left: 5px;
 }
 
-.game-set .set-cont .player-ids-div .players-sign .exchange-sign {
+.game-set .set-cont .player-ids-div .players-sign .swap-sign {
   font-size: 17px;
   cursor: pointer;
 }
