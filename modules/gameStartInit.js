@@ -1,4 +1,6 @@
 import DOMElems from './DOMElems.js';
+import { humanPlay, aiPlay } from './playAlgorithms.js';
+
 import {
     setStyle,
     select,
@@ -9,6 +11,14 @@ const {
     firstPlayerAvatar,
     opponentAvatar,
     playerInputs,
+    playerSettingsPanel,
+    gamePlayDiv,
+    firstPlayerAvatarPlaceholder,
+    opponentAvatarPlaceholder,
+    firstPlayerNamePlaceholder,
+    opponentNamePlaceholder,
+    firstPlayerScorePlaceholder,
+    opponentScorePlaceholder,
 } = DOMElems;
 const player1 = {};
 const opponent = {};
@@ -32,12 +42,37 @@ const gameStart = () => {
 
     currentPlayer = [player1, opponent].find((v) => v.avatar === select('.first-move').textContent);
 
-    /* console.log({
-        player1,
-        opponent,
-        currentPlayer,
-    }); */
+    setStyle(playerSettingsPanel, 'display', 'none');
+    setStyle(gamePlayDiv, 'display', 'block');
+
+    for (const obj of [player1, opponent]) {
+        if (obj.name === 'AI Player') {
+            obj.play = aiPlay;
+        } else {
+            obj.play = humanPlay;
+        }
+    }
+
+    [
+        firstPlayerNamePlaceholder.textContent,
+        firstPlayerAvatarPlaceholder.textContent,
+        firstPlayerScorePlaceholder.textContent,
+        opponentNamePlaceholder.textContent,
+        opponentAvatarPlaceholder.textContent,
+        opponentScorePlaceholder.textContent,
+    ] = [
+        player1.name,
+        player1.avatar,
+        player1.score,
+        opponent.name,
+        opponent.avatar,
+        opponent.score,
+    ];
     return true;
+};
+
+const switchCurrentPlayer = () => {
+    currentPlayer = currentPlayer === player1 ? opponent : player1;
 };
 
 export {
@@ -45,4 +80,5 @@ export {
     player1,
     opponent,
     currentPlayer,
+    switchCurrentPlayer,
 };

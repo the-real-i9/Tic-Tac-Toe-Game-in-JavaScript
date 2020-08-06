@@ -14,6 +14,14 @@ const DOMElems = {
     swapAvatarsBtn: select('.swap-sign'),
     playerMove: selectAll('.pM'),
     startGameBtn: select('.start-button'),
+    playCells: selectAll('.cell'),
+    gamePlayDiv: select('.game-play-div'),
+    firstPlayerAvatarPlaceholder: select('#player-1-avatar'),
+    opponentAvatarPlaceholder: select('#opponent-avatar'),
+    firstPlayerNamePlaceholder: select('#player-1-name'),
+    opponentNamePlaceholder: select('#opponent-name'),
+    firstPlayerScorePlaceholder: select('#player-1-score'),
+    opponentScorePlaceholder: select('#opponent-score'),
 };
 
 export default DOMElems;

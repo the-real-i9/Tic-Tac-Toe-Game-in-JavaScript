@@ -2,13 +2,22 @@ import {
     player1,
     opponent,
     currentPlayer,
+    switchCurrentPlayer as switchPlayer,
 } from './gameStartInit.js';
+import { event } from './manipFuncs.js';
+import winCombos from './winCombos.js';
+import checkWin from './checkWin.js';
+import DOMElems from './DOMElems.js';
+
+const { playCells } = DOMElems;
+
 const twoPlayersGamePlay = () => {
-    console.log({
-        player1,
-        opponent,
-        currentPlayer,
-    });
+    const play = (ev) => {
+        currentPlayer.play(ev);
+        switchPlayer();
+    };
+
+    [...playCells].map((elem) => event(elem, 'click', play));
 };
 
 export default twoPlayersGamePlay;
