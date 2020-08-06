@@ -19,7 +19,7 @@ const gameStart = () => {
     const someEmpty = [...playerInputs].some((v) => !v.value);
     if (someEmpty) {
         [...playerInputs].map((elem) => !elem.value && setStyle(elem, 'border', '1px solid red'));
-        return;
+        return false;
     }
 
     player1.name = firstPlayerNameInput.value;
@@ -32,11 +32,12 @@ const gameStart = () => {
 
     currentPlayer = [player1, opponent].find((v) => v.avatar === select('.first-move').textContent);
 
-    console.log({
+    /* console.log({
         player1,
         opponent,
         currentPlayer,
-    });
+    }); */
+    return true;
 };
 
 export {
