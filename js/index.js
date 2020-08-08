@@ -23,6 +23,7 @@ const {
     continueGameBtn,
     homeBtn,
     restartGameBtn,
+    backToHome,
 } = DOMElems;
 
 event(onePlayerBtn, 'click', playersSelected);
@@ -42,3 +43,4 @@ event(continueGameBtn, 'click', continueGame);
 event(restartGameBtn, 'click', restartGame);
 event(quitGameBtn, 'click', quitGame);
 event(homeBtn, 'click', quitGame);
+event(backToHome, 'click', quitGame);

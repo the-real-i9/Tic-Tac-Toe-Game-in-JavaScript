@@ -15,11 +15,13 @@ import {
     declareDraw,
     updateScore,
 } from './gameFunctions.js';
-
+import aiTurn from './aiTurn.js';
 
 const {
     playCells,
 } = DOMElems;
+
+
 const onePlayerGamePlay = () => {
     if (currentPlayer.name === 'AI Player') {
         const aiPlayed = currentPlayer.play();
@@ -50,23 +52,7 @@ const onePlayerGamePlay = () => {
             return;
         }
 
-        const aiPlayed = currentPlayer.play();
-        if (aiPlayed) {
-            const win = checkWin(currentPlayer);
-            if (win) {
-                declareWinner(currentPlayer);
-                updateScore(currentPlayer);
-                // gameOver();
-                return;
-            }
-            const draw = checkDraw();
-            if (draw) {
-                declareDraw();
-                // gameOver();
-                return;
-            }
-            switchPlayer();
-        }
+        aiTurn(currentPlayer, checkDraw, checkWin, declareDraw, declareWinner, switchPlayer, updateScore);
     };
 
     [...playCells].map((elem) => event(elem, 'click', play));

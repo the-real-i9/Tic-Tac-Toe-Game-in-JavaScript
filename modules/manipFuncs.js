@@ -6,7 +6,13 @@ const setProp = (elem, prop, value) => {
 
 const setStyle = (elem, prop, value) => {
     if (!elem) return;
-    elem.style[prop] = value;
+    if (!Array.isArray(elem)) {
+        elem.style[prop] = value;
+    } else {
+        for (const el of elem) {
+            el.style[prop] = value;
+        }
+    }
 };
 
 const classAction = (elem, action, ...classes) => {

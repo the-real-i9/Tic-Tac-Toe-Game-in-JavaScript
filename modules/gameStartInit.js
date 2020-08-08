@@ -1,5 +1,5 @@
 import DOMElems from './DOMElems.js';
-import { humanPlay, aiPlay } from './playAlgorithms.js';
+import { humanPlay, aiPlay, firstToPlay } from './playAlgorithms.js';
 
 import {
     setStyle,
@@ -75,10 +75,16 @@ const switchCurrentPlayer = () => {
     currentPlayer = currentPlayer === player1 ? opponent : player1;
 };
 
+const setFirstPlayer = () => {
+    // console.log({ firstToPlay });
+    currentPlayer = firstToPlay === player1 ? opponent : player1;
+};
+
 export {
     gameStart,
     player1,
     opponent,
     currentPlayer,
     switchCurrentPlayer,
+    setFirstPlayer,
 };

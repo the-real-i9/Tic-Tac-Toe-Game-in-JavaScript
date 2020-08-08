@@ -1,4 +1,6 @@
 import winCombos from './winCombos.js';
+import aiTurn from './aiTurn.js';
+import { switchCurrentPlayer as switchPlayer, currentPlayer as currentPlayerChange, setFirstPlayer } from './gameStartInit.js';
 import {
     select,
     insertHtml,
@@ -6,6 +8,8 @@ import {
     setStyle,
 } from './manipFuncs.js';
 import DOMElems from './DOMElems.js';
+// import { makeFalse } from './playAlgorithms.js';
+
 const {
     gameBoard,
     alertBox,
@@ -14,6 +18,7 @@ const {
     playCells,
     playerNames,
     gamePlayDiv,
+    playerSettingsPanel,
     frontPage,
 } = DOMElems;
 
@@ -71,17 +76,27 @@ const declareDraw = () => {
 
 
 const restartGame = () => {
+    // makeFalse();
     resetGameBoard();
+    setFirstPlayer();
+    if (currentPlayerChange.name === 'AI Player') {
+        aiTurn(currentPlayerChange, checkDraw, checkWin, declareDraw, declareWinner, switchPlayer, updateScore);
+    }
 };
 
 const continueGame = () => {
+    // makeFalse();
     resetGameBoard();
+    setFirstPlayer();
+    if (currentPlayerChange.name === 'AI Player') {
+        aiTurn(currentPlayerChange, checkDraw, checkWin, declareDraw, declareWinner, switchPlayer, updateScore);
+    }
     setStyle(alertBox, 'display', 'none');
 };
 
 const quitGame = () => {
     resetGameBoard();
-    setStyle(gamePlayDiv, 'display', 'none');
+    setStyle([gamePlayDiv, playerSettingsPanel, alertBox], 'display', 'none');
     setStyle(frontPage, 'display', 'flex');
 };
 

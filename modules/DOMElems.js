@@ -30,6 +30,7 @@ const DOMElems = {
     continueGameBtn: select('.continue-game'),
     homeBtn: select('#home'),
     restartGameBtn: select('#restart'),
+    backToHome: select('#home-set'),
 };
 
 export default DOMElems;
