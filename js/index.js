@@ -1,11 +1,29 @@
 import DOMElems from '../modules/DOMElems.js';
-import { event } from '../modules/manipFuncs.js';
+import {
+    event,
+} from '../modules/manipFuncs.js';
 import playersSelected from '../modules/playerSelect.js';
-import { gameStart } from '../modules/gameStartInit.js';
+import {
+    gameStart,
+} from '../modules/gameStartInit.js';
 import onePlayerGamePlay from '../modules/onePlayerGamePlay.js';
 import twoPlayersGamePlay from '../modules/twoPlayersGamePlay.js';
 
-const { onePlayerBtn, twoPlayersBtn, startGameBtn } = DOMElems;
+import {
+    quitGame,
+    continueGame,
+    restartGame,
+} from '../modules/gameFunctions.js';
+
+const {
+    onePlayerBtn,
+    twoPlayersBtn,
+    startGameBtn,
+    quitGameBtn,
+    continueGameBtn,
+    homeBtn,
+    restartGameBtn,
+} = DOMElems;
 
 event(onePlayerBtn, 'click', playersSelected);
 event(twoPlayersBtn, 'click', playersSelected);
@@ -19,3 +37,8 @@ event(startGameBtn, 'click', (ev) => {
         }
     }
 });
+
+event(continueGameBtn, 'click', continueGame);
+event(restartGameBtn, 'click', restartGame);
+event(quitGameBtn, 'click', quitGame);
+event(homeBtn, 'click', quitGame);

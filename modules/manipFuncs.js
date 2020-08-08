@@ -1,5 +1,6 @@
 const [select, selectAll] = [(elem) => document.querySelector(elem), (elem) => document.querySelectorAll(elem)];
 const setProp = (elem, prop, value) => {
+    if (!elem) return;
     elem[prop] = value;
 };
 

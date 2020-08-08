@@ -22,6 +22,14 @@ const DOMElems = {
     opponentNamePlaceholder: select('#opponent-name'),
     firstPlayerScorePlaceholder: select('#player-1-score'),
     opponentScorePlaceholder: select('#opponent-score'),
+    gameBoard: select('.game-board'),
+    alertBox: select('.win-draw-alert'),
+    alertMessage: select('.message'),
+    playerNames: selectAll('.player-name-g'),
+    quitGameBtn: select('.quit-game'),
+    continueGameBtn: select('.continue-game'),
+    homeBtn: select('#home'),
+    restartGameBtn: select('#restart'),
 };
 
 export default DOMElems;

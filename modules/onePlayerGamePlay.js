@@ -8,6 +8,13 @@ import {
     event,
 } from './manipFuncs.js';
 import DOMElems from './DOMElems.js';
+import {
+    declareWinner,
+    checkWin,
+    checkDraw,
+    declareDraw,
+    updateScore,
+} from './gameFunctions.js';
 
 
 const {
@@ -15,14 +22,51 @@ const {
 } = DOMElems;
 const onePlayerGamePlay = () => {
     if (currentPlayer.name === 'AI Player') {
-        currentPlayer.play();
-        switchPlayer();
+        const aiPlayed = currentPlayer.play();
+        if (aiPlayed) {
+            switchPlayer();
+        }
     }
     const play = (ev) => {
-        currentPlayer.play(ev);
-        switchPlayer();
-        currentPlayer.play();
-        switchPlayer();
+        const huPlayed = currentPlayer.play(ev);
+        if (huPlayed) {
+            const win = checkWin(currentPlayer);
+            if (win) {
+                // game Over
+                declareWinner(currentPlayer, win);
+                updateScore(currentPlayer);
+                // gameOver();
+                return;
+            }
+            const draw = checkDraw();
+            if (draw) {
+                // game Over
+                declareDraw();
+                // gameOver();
+                return;
+            }
+            switchPlayer();
+        } else {
+            return;
+        }
+
+        const aiPlayed = currentPlayer.play();
+        if (aiPlayed) {
+            const win = checkWin(currentPlayer);
+            if (win) {
+                declareWinner(currentPlayer);
+                updateScore(currentPlayer);
+                // gameOver();
+                return;
+            }
+            const draw = checkDraw();
+            if (draw) {
+                declareDraw();
+                // gameOver();
+                return;
+            }
+            switchPlayer();
+        }
     };
 
     [...playCells].map((elem) => event(elem, 'click', play));

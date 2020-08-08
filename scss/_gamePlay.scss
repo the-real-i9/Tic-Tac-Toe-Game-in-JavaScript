@@ -1,4 +1,5 @@
 .game-play {
+    position: relative;
     border: 5px ridge $borderCol;
     padding: 10px;
     border-radius: 10px;
@@ -29,7 +30,7 @@
                 border: 3px solid $cream;
                 text-align: center;
                 color: $cream;
-                font-size: 60px;
+                font-size: 70px;
                 cursor: pointer;
 
                 &:first-child {
@@ -42,6 +43,117 @@
             }
         }
     }
+
+    .stroke {
+        position: absolute;
+        background: $borderCol;
+    }
+
+    @mixin stroke-hr {
+        width: 275px;
+        height: 5px;
+        border-radius: 10px;
+    }
+    @mixin stroke-vt {
+        width: 5px;
+        height: 275px;
+        border-radius: 10px;
+    }
+    
+
+    #stroke-012 {
+        @include stroke-hr;
+        top: ((100% / 3) / 2) + 1%;
+    }
+    #stroke-345 {
+        @include stroke-hr;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    #stroke-678 {
+        @include stroke-hr;
+        bottom: ((100% / 3) / 2) + 1%;
+    }
+
+    #stroke-036 {
+        @include stroke-vt;
+        top: 50%;
+        transform: translateY(-50%);
+        left: ((100% / 3)/ 2) + 1%;
+    }
+    #stroke-147 {
+        @include stroke-vt;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+    #stroke-258 {
+        @include stroke-vt;
+        right: (100% / 3) / 2 + 1%;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    #stroke-048 {
+        @include stroke-vt;
+        left: (285px / 2);
+        top: -5.5%;
+        transform: rotate(-45deg);
+        height: 325px;
+    }
+    #stroke-246 {
+        @include stroke-vt;
+        left: (285px / 2);
+        bottom: -6%;
+        transform: rotate(45deg);
+        height: 325px;
+    }
+
+    .win-draw-alert {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 200px;
+        height: 150px;
+        border: 4px ridge $borderCol;
+        background: rgba($gameset-bg, 0.5);
+        @include flex(center, center, column);
+        border-radius: 10px;
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            bottom: -250px;
+            left: -100px;
+            z-index: -1;
+        }
+
+        .message {
+            font-size: 17px;
+            color: $cream;
+            margin-bottom: 10px;
+        }
+
+        button {
+            width: 125px;
+            height: 25px;
+            border-radius: 3px;
+            background: $gameset-bg;
+            border: 1px solid $cream;
+            color: $cream;
+            outline: none;
+            margin: 5px 0;
+
+            &:hover {
+                background: $cream;
+                color: $gameset-bg;
+            }
+        }
+        display: none;
+    }
+
 }
 
 .players-and-score {

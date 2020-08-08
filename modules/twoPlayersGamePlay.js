@@ -5,8 +5,6 @@ import {
     switchCurrentPlayer as switchPlayer,
 } from './gameStartInit.js';
 import { event } from './manipFuncs.js';
-import winCombos from './winCombos.js';
-import checkWin from './checkWin.js';
 import DOMElems from './DOMElems.js';
 
 const { playCells } = DOMElems;
