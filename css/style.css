@@ -102,6 +102,22 @@
   cursor: pointer;
 }
 
+.game-set .set-cont .b-o-ub {
+  color: #EBC187;
+  font-size: 20px;
+  border: 2px solid #EBC187;
+  padding: 5px 10px;
+  border-radius: 7px;
+}
+
+.game-set .set-cont .b-o-ub .ai-type {
+  margin-right: 10px;
+}
+
+.game-set .set-cont .b-o-ub .changeAI {
+  cursor: pointer;
+}
+
 .game-set .set-cont .move {
   width: 85%;
   display: -webkit-box;

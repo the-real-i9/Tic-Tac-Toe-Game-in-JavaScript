@@ -1,5 +1,10 @@
 import DOMElems from './DOMElems.js';
-import { humanPlay, aiPlay, firstToPlay } from './playAlgorithms.js';
+import {
+    humanPlay,
+    unbeatableAIPlay,
+    beatableAIPlay,
+    firstToPlay,
+} from './playAlgorithms.js';
 
 import {
     setStyle,
@@ -47,7 +52,11 @@ const gameStart = () => {
 
     for (const obj of [player1, opponent]) {
         if (obj.name === 'AI Player') {
-            obj.play = aiPlay;
+            if (select('.ai-type').textContent === 'Unbeatable AI') {
+                obj.play = unbeatableAIPlay;
+            } else {
+                obj.play = beatableAIPlay;
+            }
         } else {
             obj.play = humanPlay;
         }

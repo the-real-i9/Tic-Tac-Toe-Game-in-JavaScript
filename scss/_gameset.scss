@@ -69,6 +69,20 @@
             }
         }
 
+        .b-o-ub {
+            color: $cream;
+            font-size: 20px;
+            border: 2px solid $cream;
+            padding: 5px 10px;
+            border-radius: 7px;
+            .ai-type {
+                margin-right: 10px;
+            }
+            .changeAI {
+                cursor: pointer;
+            }
+        }
+
         .move {
             width: 85%;
             @include flex(center, center);

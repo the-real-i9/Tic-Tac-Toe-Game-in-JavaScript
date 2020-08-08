@@ -12,6 +12,7 @@ const DOMElems = {
     firstPlayerAvatar: select('#player-1-sign-set'),
     opponentAvatar: select('#opponent-sign-set'),
     swapAvatarsBtn: select('.swap-sign'),
+    firstMoveDiv: select('.move'),
     playerMove: selectAll('.pM'),
     startGameBtn: select('.start-button'),
     playCells: selectAll('.cell'),
