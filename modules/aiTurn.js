@@ -5,13 +5,11 @@ const aiTurn = (currentPlayer, checkDraw, checkWin, declareDraw, declareWinner, 
         if (win) {
             declareWinner(currentPlayer, win);
             updateScore(currentPlayer);
-            // gameOver();
             return;
         }
         const draw = checkDraw();
         if (draw) {
             declareDraw();
-            // gameOver();
             return;
         }
         switchPlayer();

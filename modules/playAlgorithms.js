@@ -15,18 +15,11 @@ const playInCell = (avatar, cellIndex) => {
 
 // eslint-disable-next-line import/no-mutable-exports
 let firstToPlay = null;
-// eslint-disable-next-line import/no-mutable-exports
-// let aiHasPlayed = false;
-
-// const makeFalse = () => {
-//     aiHasPlayed = false;
-// };
 
 function humanPlay(ev) {
     const cellsEmpty = [...playCells].every((cell) => cell.textContent === '');
     if (cellsEmpty) {
         firstToPlay = this;
-        console.log({ firstToPlay });
     }
     const played = playInCell(this.avatar, ev.target.id.slice(-1));
     if (played) return true;
@@ -40,13 +33,11 @@ function beatableAIPlay() {
     const indexesOfOtherEmpty = otherEmpty.map((cell) => cell.id.slice(-1));
     if (cellsEmpty) {
         firstToPlay = this;
-        // aiHasPlayed = true;
-        // console.log({ firstToPlay });
+
         // If cells are empty play in any cell
         playInCell(this.avatar, Math.trunc(Math.random() * 9));
         return true;
     }
-    console.log('Beatable');
 
     playInCell(this.avatar, indexesOfOtherEmpty[Math.trunc(Math.random() * indexesOfOtherEmpty.length)]);
 
@@ -62,8 +53,7 @@ function unbeatableAIPlay() {
     const indexesOfOtherEmpty = otherEmpty.map((cell) => cell.id.slice(-1));
     if (cellsEmpty) {
         firstToPlay = this;
-        // aiHasPlayed = true;
-        // console.log({ firstToPlay });
+
         // If cells are empty play in any cell
         playInCell(this.avatar, Math.trunc(Math.random() * 9));
         return true;
@@ -168,6 +158,4 @@ export {
     unbeatableAIPlay,
     firstToPlay,
     beatableAIPlay,
-
-    // makeFalse,
 };

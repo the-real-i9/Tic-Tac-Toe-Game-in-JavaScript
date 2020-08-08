@@ -6,9 +6,9 @@ import {
     insertHtml,
     setProp,
     setStyle,
+    classAction,
 } from './manipFuncs.js';
 import DOMElems from './DOMElems.js';
-// import { makeFalse } from './playAlgorithms.js';
 
 const {
     gameBoard,
@@ -20,6 +20,12 @@ const {
     gamePlayDiv,
     playerSettingsPanel,
     frontPage,
+    firstPlayerNameInput,
+    opponentNameInput,
+    firstPlayerAvatar,
+    opponentAvatar,
+    playerMove,
+    swapAvatarsBtn,
 } = DOMElems;
 
 const resetGameBoard = () => {
@@ -27,6 +33,20 @@ const resetGameBoard = () => {
         setProp(cell, 'textContent', '');
     }
     setProp(select('.stroke'), 'outerHTML', '');
+};
+
+const resetGameSettings = () => {
+    setProp(firstPlayerNameInput, 'value', '');
+    setProp(opponentNameInput, 'value', '');
+    opponentNameInput.removeAttribute('disabled');
+    setProp(select('.b-o-ub'), 'outerHTML', '');
+    setProp(select('.swap-sign'), 'outerHTML', '');
+    setProp(firstPlayerAvatar, 'textContent', 'X');
+    setProp(opponentAvatar, 'textContent', 'O');
+    for (const elem of [...playerMove]) {
+        classAction(elem, 'remove', 'first-move');
+    }
+    classAction([...playerMove][0], 'add', 'first-move');
 };
 
 const checkWin = (currentPlayer) => {
@@ -70,13 +90,12 @@ const checkDraw = () => {
 };
 
 const declareDraw = () => {
-    setProp(alertMessage, 'textContent', 'You Draw!');
+    setProp(alertMessage, 'textContent', 'Tie Game!');
     setStyle(alertBox, 'display', 'flex');
 };
 
 
 const restartGame = () => {
-    // makeFalse();
     resetGameBoard();
     setFirstPlayer();
     if (currentPlayerChange.name === 'AI Player') {
@@ -85,7 +104,6 @@ const restartGame = () => {
 };
 
 const continueGame = () => {
-    // makeFalse();
     resetGameBoard();
     setFirstPlayer();
     if (currentPlayerChange.name === 'AI Player') {
@@ -96,6 +114,7 @@ const continueGame = () => {
 
 const quitGame = () => {
     resetGameBoard();
+    resetGameSettings();
     setStyle([gamePlayDiv, playerSettingsPanel, alertBox], 'display', 'none');
     setStyle(frontPage, 'display', 'flex');
 };

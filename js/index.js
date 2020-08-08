@@ -8,7 +8,6 @@ import {
 } from '../modules/gameStartInit.js';
 import onePlayerGamePlay from '../modules/onePlayerGamePlay.js';
 import twoPlayersGamePlay from '../modules/twoPlayersGamePlay.js';
-
 import {
     quitGame,
     continueGame,
@@ -25,6 +24,7 @@ const {
     restartGameBtn,
     backToHome,
 } = DOMElems;
+
 
 event(onePlayerBtn, 'click', playersSelected);
 event(twoPlayersBtn, 'click', playersSelected);

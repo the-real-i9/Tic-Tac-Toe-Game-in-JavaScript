@@ -3,6 +3,8 @@ import {
     setStyle,
     setProp,
     classAction,
+    insertHtml,
+    select,
 } from './manipFuncs.js';
 import DOMElems from './DOMElems.js';
 const {
@@ -12,6 +14,7 @@ const {
     playerAvatarsSet,
     playerMove,
     playerInputs,
+    opponentAvatar,
 } = DOMElems;
 
 const general = () => {
@@ -25,8 +28,11 @@ const general = () => {
         });
     }
 
+    const swapAvatarsBtnHtml = "<p class='swap-sign'><i class='fas fa-undo'></i></p>";
+
+    insertHtml(opponentAvatar, 'beforebegin', swapAvatarsBtnHtml);
     // swap player avatars if swapped
-    event(swapAvatarsBtn, 'click', () => {
+    event(select('.swap-sign'), 'click', () => {
         for (const elem of [...playerAvatarsSet]) {
             if (elem.textContent === 'X') {
                 setProp(elem, 'textContent', 'O');

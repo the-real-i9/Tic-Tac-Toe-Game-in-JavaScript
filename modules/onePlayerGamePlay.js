@@ -1,6 +1,4 @@
 import {
-    player1,
-    opponent,
     currentPlayer,
     switchCurrentPlayer as switchPlayer,
 } from './gameStartInit.js';
@@ -37,14 +35,12 @@ const onePlayerGamePlay = () => {
                 // game Over
                 declareWinner(currentPlayer, win);
                 updateScore(currentPlayer);
-                // gameOver();
                 return;
             }
             const draw = checkDraw();
             if (draw) {
                 // game Over
                 declareDraw();
-                // gameOver();
                 return;
             }
             switchPlayer();

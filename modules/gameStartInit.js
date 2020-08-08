@@ -85,7 +85,6 @@ const switchCurrentPlayer = () => {
 };
 
 const setFirstPlayer = () => {
-    // console.log({ firstToPlay });
     currentPlayer = firstToPlay === player1 ? opponent : player1;
 };
 
