@@ -456,7 +456,7 @@
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  font-family: 'Arial Rounded MT';
+  font-family: 'Arial Rounded MT', sans-serif;
 }
 
 button {
