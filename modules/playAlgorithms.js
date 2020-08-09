@@ -134,7 +134,7 @@ function unbeatableAIPlay() {
                 ['', this.avatar, ''],
             ];
             if (checkMatch(mapToAvatars, hasPlayedOnceMatches)) {
-                const emptyIndex = mapToAvatars.indexOf('');
+                const emptyIndex = [mapToAvatars.indexOf(''), mapToAvatars.lastIndexOf('')][Math.trunc(Math.random() * 2)];
                 const playIndex = winCombo[emptyIndex];
                 return String(playIndex);
             }

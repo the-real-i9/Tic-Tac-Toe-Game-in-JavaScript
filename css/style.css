@@ -539,12 +539,21 @@ html, body {
       -ms-flex-direction: column;
           flex-direction: column;
   width: 310px;
-  height: 175px;
+  height: 250px;
   border: 8px ridge #9E8970;
   border-radius: 15px;
 }
 
-.frontpage .players button {
+.frontpage .players button, .frontpage .players a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-shadow: inset -4px -4px 5px rgba(0, 0, 0, 0.3), inset 4px 4px 5px rgba(255, 255, 255, 0.4);
           box-shadow: inset -4px -4px 5px rgba(0, 0, 0, 0.3), inset 4px 4px 5px rgba(255, 255, 255, 0.4);
   width: 90%;
@@ -557,8 +566,14 @@ html, body {
   border-radius: 7px;
 }
 
-.frontpage .players button:active {
+.frontpage .players button:active, .frontpage .players a:active {
   -webkit-box-shadow: inset 4px 4px 5px rgba(0, 0, 0, 0.3), inset -4px -4px 5px rgba(255, 255, 255, 0.4);
           box-shadow: inset 4px 4px 5px rgba(0, 0, 0, 0.3), inset -4px -4px 5px rgba(255, 255, 255, 0.4);
+}
+
+.frontpage .players #about-app {
+  font-size: 17px;
+  color: #222;
+  text-decoration: none;
 }
 /*# sourceMappingURL=style.css.map */
