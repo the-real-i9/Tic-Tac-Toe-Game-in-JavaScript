@@ -22,5 +22,5 @@ Hi, I'm Kenny, a Web App developer to-be. In this README file I'll share briefly
 
 Thanks for checking me out, you're free to use this algorithm in any tutorial or any project. And if you like, I'm not imposing it, you can make reference to me. It'll be my pleasure.
 
-Game is live for testing: [Click here]()    
+Game is live for testing: [Click here](https://tic-tac-toe-game-in-javascript.hostman.site/)    
 Follow me on Twitter: [Twitter](https://twitter.com/Oluwarinolasam2)
