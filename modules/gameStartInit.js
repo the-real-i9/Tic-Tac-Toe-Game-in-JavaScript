@@ -2,7 +2,8 @@ import DOMElems from './DOMElems.js';
 import {
     humanPlay,
     unbeatableAIPlay,
-    beatableAIPlay,
+    normalLevelDifficulty,
+    easyLevelDifficulty,
     firstToPlay,
 } from './playAlgorithms.js';
 
@@ -52,10 +53,13 @@ const gameStart = () => {
 
     for (const obj of [player1, opponent]) {
         if (obj.name === 'AI Player') {
-            if (select('.ai-type').textContent === 'Unbeatable AI') {
+            const aiType = select('.ai-type').textContent;
+            if (aiType === 'Unbeatable AI') {
                 obj.play = unbeatableAIPlay;
+            } else if (aiType === 'Easy') {
+                obj.play = easyLevelDifficulty;
             } else {
-                obj.play = beatableAIPlay;
+                obj.play = normalLevelDifficulty;
             }
         } else {
             obj.play = humanPlay;
