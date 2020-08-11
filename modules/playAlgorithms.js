@@ -396,7 +396,7 @@ function unbeatableAIPlay() {
         return false;
     };
 
-    if ([...playCells].filter((c) => select(`cell-${c}`).textContent !== '').length === 4) {
+    if ([...playCells].filter((c) => c.textContent !== '').length === 4) {
         const indexToFormTwoWayWin = getIndexToFormTwoWayWin();
         if (indexToFormTwoWayWin) {
             playInCell(this.avatar, indexToFormTwoWayWin);
