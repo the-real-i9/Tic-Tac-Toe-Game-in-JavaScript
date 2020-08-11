@@ -15,7 +15,6 @@ const playInCell = (avatar, cellIndex) => {
 
 // eslint-disable-next-line import/no-mutable-exports
 let firstToPlay = null;
-const oppAvatar = this.avatar === 'X' ? 'O' : 'X';
 
 function humanPlay(ev) {
     const cellsEmpty = [...playCells].every((cell) => cell.textContent === '');
@@ -46,6 +45,7 @@ function easyLevelDifficulty() {
 }
 
 function normalLevelDifficulty() {
+    const oppAvatar = this.avatar === 'X' ? 'O' : 'X';
     // The real deal
     const cellsEmpty = [...playCells].every((cell) => cell.textContent === '');
     const containsOne = [...playCells].filter((cell) => cell.textContent !== '').length === 1;
@@ -159,6 +159,7 @@ let whereHumanFirstPlayed = null;
 let whereHumanWillPlay = null;
 
 function unbeatableAIPlay() {
+    const oppAvatar = this.avatar === 'X' ? 'O' : 'X';
     const evenCells = [0, 2, 6, 8, 4];
     const upperEven = [0, 2];
     const lowerEven = [6, 8];
@@ -176,10 +177,6 @@ function unbeatableAIPlay() {
         return true;
     }
 
-    if (containsOne) {
-        playInCell(this.avatar, String(...middleEven));
-        return true;
-    }
 
     const checkMatch = (target, cases) => {
         const [case1, case2, case3] = cases;
@@ -238,6 +235,17 @@ function unbeatableAIPlay() {
     const cellToBlock = winComboOpponentHasPlayedTwice();
     if (cellToBlock) {
         playInCell(this.avatar, cellToBlock);
+        return true;
+    }
+
+    if (containsOne) {
+        const cellsIndexWithHuman = [...playCells].filter((c) => c.textContent === oppAvatar).map((c) => Number(c.id.slice(-1)));
+        const evenExceptFour = [0, 2, 6, 8];
+        if (cellsIndexWithHuman[0] !== 4) {
+            playInCell(this.avatar, String(...middleEven));
+            return true;
+        }
+        playInCell(this.avatar, String(evenExceptFour[Math.trunc(Math.random() * evenExceptFour.length)]));
         return true;
     }
 
